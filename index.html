@@ -1,218 +1,94 @@
 <!DOCTYPE html>
 <html>
-	<head>
-<!--		<meta http-equiv="refresh" content="0; url=http://agassiwong.online/fr/"/>-->
-		<title>Agassi Wong Online</title>
-		<meta name="description" content="Promote yourself !" />
-		<meta name="author" content="Agassi WONG" />
-		<link rel="image_src" href="images/logo.png" />
-		<link rel="shortcut icon" href="images/favicon.png" />
-		<style>
-			@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-			html,
-			body {
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-				margin: 0;
-				display: flex;
-				flex-direction: column;
-				flex-wrap: wrap;
-				font-family: 'Open Sans Condensed', sans-serif;
-			}
+.bgimg {
+  background-image: url('/w3images/forestbridge.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
 
-			div[class*=box] {
-				height: 33.33%;
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
 
-			.box-1 { background-color: #e64b77; }
-			.box-2 { background-color: #ffba42; }
-			.box-3 { background-color: #32db8a; }
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
 
-			.btn {
-				line-height: 50px;
-				height: 50px;
-				text-align: center;
-				width: 250px;
-				cursor: pointer;
-			}
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-			/*
-            ========================
-                  BUTTON ONE
-            ========================
-            */
-			.btn-one {
-				color: #FFF;
-				transition: all 0.3s;
-				position: relative;
-			}
-			.btn-one span {
-				transition: all 0.3s;
-			}
-			.btn-one::before {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				opacity: 0;
-				transition: all 0.3s;
-				border-top-width: 1px;
-				border-bottom-width: 1px;
-				border-top-style: solid;
-				border-bottom-style: solid;
-				border-top-color: rgba(255,255,255,0.5);
-				border-bottom-color: rgba(255,255,255,0.5);
-				transform: scale(0.1, 1);
-			}
-			.btn-one:hover span {
-				letter-spacing: 2px;
-			}
-			.btn-one:hover::before {
-				opacity: 1;
-				transform: scale(1, 1);
-			}
-			.btn-one::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				transition: all 0.3s;
-				background-color: rgba(255,255,255,0.1);
-			}
-			.btn-one:hover::after {
-				opacity: 0;
-				transform: scale(0.1, 1);
-			}
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
+<body>
 
+<div class="bgimg">
+  <div class="topleft">
+    <p>Logo</p>
+  </div>
+  <div class="middle">
+    <h1>MARIAGE<br/>JINGJING & AGASSI</h1>
+    <h3>12 SEPTEMBRE 2020 À 14:00</h3>
+    <hr>
+    <p id="demo" style="font-size:30px"></p>
+  </div>
+  <div class="bottomleft">
+    <p>Some text</p>
+  </div>
+</div>
 
-			/*
-            ========================
-                  BUTTON TWO
-            ========================
-            */
-			.btn-two {
-				color: #FFF;
-				transition: all 0.5s;
-				position: relative;
-			}
-			.btn-two span {
-				z-index: 2;
-				display: block;
-				position: absolute;
-				width: 100%;
-				height: 100%;
-			}
-			.btn-two::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				transition: all 0.5s;
-				border: 1px solid rgba(255,255,255,0.2);
-				background-color: rgba(255,255,255,0.1);
-			}
-			.btn-two::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				transition: all 0.5s;
-				border: 1px solid rgba(255,255,255,0.2);
-				background-color: rgba(255,255,255,0.1);
-			}
-			.btn-two:hover::before {
-				transform: rotate(-45deg);
-				background-color: rgba(255,255,255,0);
-			}
-			.btn-two:hover::after {
-				transform: rotate(45deg);
-				background-color: rgba(255,255,255,0);
-			}
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 12, 2020 14:00:00").getTime();
 
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
 
-			/*
-            ========================
-                  BUTTON THREE
-            ========================
-            */
-			.btn-three {
-				color: #FFF;
-				transition: all 0.5s;
-				position: relative;
-			}
-			.btn-three::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				background-color: rgba(255,255,255,0.1);
-				transition: all 0.3s;
-			}
-			.btn-three:hover::before {
-				opacity: 0 ;
-				transform: scale(0.5,0.5);
-			}
-			.btn-three::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				opacity: 0;
-				transition: all 0.3s;
-				border: 1px solid rgba(255,255,255,0.5);
-				transform: scale(1.2,1.2);
-			}
-			.btn-three:hover::after {
-				opacity: 1;
-				transform: scale(1,1);
-			}
-		</style>
-	</head>
-	<body>
-		<!-- Hover #1 -->
-		<div class="box-1" onclick="location.href='cn';">
-			<div class="btn btn-three">
-				<span>中文版<br><img src="images/ch-flag.gif" style="padding-top: 3%" width="40%"/></span>
-			</div>
-		</div>
+  // Get todays date and time
+  var now = new Date().getTime();
+  
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+  
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = "J-" +days + " " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
-		<!-- Hover #2 -->
-<!--		<div class="box-2" onclick="window.location='http://agassiwong.online/fr/';">-->
-		<div class="box-2" onclick="location.href='fr';">
-			<div class="btn btn-three">
-				<span>VERSION FRANÇAISE<br><img src="images/fr-flag.gif" style="padding-top: 3%" width="40%"/></span>
-			</div>
-		</div>
-
-		<!-- Hover #3 -->
-		<div class="box-3" onclick="location.href='en';">
-			<div class="btn btn-three">
-				<span>ENGLISH VERSION<br><img src="images/uk-flag.gif" style="padding-top: 3%" width="40%"/></span>
-			</div>
-		</div>
-	</body>
+</body>
 </html>
