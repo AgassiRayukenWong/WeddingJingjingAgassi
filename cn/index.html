@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <title>婚禮 魯晶晶 & 王展裕</title>
+  <meta name="description" content="婚禮 魯晶晶 & 王展裕" />
+  <meta name="author" content="魯晶晶 & 王展裕" />
+  <link rel="image_src" href="../LogoPage.png" />
+  <link rel="shortcut icon" href="../favicon.png" /><style>
+  html { 
+    background: url("background1.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  body {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    color: aliceblue;
+  }
+  .maps {
+    width: 512px;
+    display: block;
+    margin: 0 auto;
+  }
+  hr {
+    margin: auto;
+    width: 40%;
+  }
+</style>
+<body>
+
+  <img src="LogoPage.png">
+  <h1>婚禮<br/>魯晶晶 & 王展裕</h1>
+  <h2>2020年 9月 12日 下午2:00</h2>
+  <p id="demo" style="font-size:30px"></p>
+  <hr>
+  <h2>結婚地點 :</h2>
+  <h3>Mairie de Lognes<br/>11 Esplanade des Droits de l'Homme, 77185 Lognes</h3>
+
+  <div class="maps">
+    <iframe style="border-radius: 5%;" width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=11%20Esplanade%20des%20Droits%20de%20l'Homme,%2077185%20Lognes+(Mairie%20de%20Lognes)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+  </div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 12, 2020 14:00:00").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+  
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+  
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = "日-" +days + " " + hours + "小時 "
+  + minutes + "分鐘 " + seconds + "秒";
+  
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
